@@ -1,0 +1,42 @@
+
+{% extends 'core/base.html' %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+</head>
+<body>
+
+
+   {% block body %}
+   
+   {% for item in item_list %}
+   <div class = "row">
+    <div class = "col-md-2 offset-md-2">
+      <img src="{{item.item_image}}" class = "card" height="150px" width="150px">
+
+    </div>
+    <div class = "col-md-4">
+        
+        <h3>{{item.item_name}}</h3>
+        <h5>{{item.item_desc}}</h5>
+        <h6>{{item.item_price}}</h6>
+        <h4>{{item.user_name}}</h4>
+    </div>
+    <div class = "col-md-2">
+        <a href="{% url 'core:detail' item.id %}" class = "btn btn-success">Detail</a>
+     
+    </div>
+
+   </div>
+   {% endfor %}
+   {% endblock %}
+
+    
+</body>
+</html>

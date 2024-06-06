@@ -1,0 +1,5 @@
+*.lock
+Pipfile
+*.sqlite3
+/pictures
+/profile_pictures
